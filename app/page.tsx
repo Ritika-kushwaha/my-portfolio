@@ -1,212 +1,319 @@
+// PortfolioPage.tsx - Designed to mimic the dark, neon-aesthetic of the provided image.
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaLink, FaRss, FaFacebookF } from 'react-icons/fa';
-import { PiSuitcaseSimpleBold, PiCodeBlockBold, PiCloudArrowUpBold } from 'react-icons/pi';
+import ProjectsPage from './app/project.tsx';
 
-// --- 1. TYPE DEFINITIONS (TypeScript Interfaces) ---
-
-interface Skill {
-  icon: React.ElementType; // Icon component type
-  title: string;
-  description: string;
-}
-
-interface Experience {
-  company: string;
-  title: string;
-  duration: string;
-  techStack: string[];
-}
-
-interface Project {
-  title: string;
-  description: string;
-  category: string;
-}
-
-// --- 2. DATA (Mock Data based on the images) ---
-
-const SKILLS_DATA: Skill[] = [
-  {
-    icon: PiSuitcaseSimpleBold,
-    title: "Python & Java",
-    description: "I develop scalable and maintainable web applications using Java and Python.",
+// --- Data Structure (Optional but good practice) ---
+const resumeData = {
+  name: "RITIKA KUSHWAHA",
+  title: "STUDENT | BACHELORS OF TECHNOLOGY",
+  heroTagline: "Innovating at the intersection of Gaming, Web, and AI.",
+  about: "A highly motivated and skilled Computer Science student specializing in Educational Technology with expertise in game development, web development, and 3D modeling. Passionate about creating engaging user experiences and interactive learning tools. Proficient in Python, Java, Unity, Blender, and web technologies, with strong problem-solving skills and a keen interest in AI and data analytics.",
+  education: [
+    {
+      institution: "VIT BHOPAL UNIVERSITY, KOTHRI KALAN",
+      degree: "Bachelor of Technology in Computer Science (Educational Technology)",
+      years: "2023 - 2027",
+      details: "Departments Dean's List (All Semesters), Cumulative GPA: 8.36"
+    },
+    {
+      institution: "LUCKNOW PUBLIC SCHOOL, CBSE LUCKNOW",
+      degree: "Degree: Class XII",
+      years: "2022",
+      details: "Percentage: 80%"
+    },
+    {
+      institution: "LUCKNOW PUBLIC SCHOOL, CBSE LUCKNOW",
+      degree: "Degree: Class X",
+      years: "2020",
+      details: "Percentage: 92.4%"
+    }
+  ],
+  skills: {
+    programming: ["Python, Java", "JavaScript, HTML, CSS", "Django", "PWA", "OOP"],
+    gameDev: ["Unity (C#) (Unreal Engine)", "2D/3D Game Development"],
+    data: ["Blender (3D Modeling, Rendering, Animation)", "Data Analysis with Python", "AI & Machine Learning Fundamentals", "Asset Optimization for Games"]
   },
-  {
-    icon: PiCodeBlockBold,
-    title: "JavaScript & React",
-    description: "I build modern and responsive user interfaces using React and its ecosystem.",
-  },
-  {
-    icon: PiCloudArrowUpBold,
-    title: "2D/3D Game Development",
-    description: "I create immersive and interactive 2D and 3D games using Unity and Blender.",
-  },
-  {
-    icon: PiCloudArrowUpBold,
-    title: "Web Development",
-    description: "I design and develop dynamic and user-friendly websites using HTML, CSS, and JavaScript.",
-  },
-  {
-    icon: PiCloudArrowUpBold,
-    title: "Data Analysis with Python",
-    description: "I use python for data analysis and visualization.",
-  },
-  {    icon: PiCloudArrowUpBold,
-    title: "3D Modeling, Rendering, Animation",
-    description: "I create detailed 3D models, renderings, and animations using Blender.",
-  },
-];
+  projects: [
+    {
+      name: "NxtStep (Career Counseling Website)",
+      description: "Developed a 0-to-1 Career Counseling platform using Django, Python, HTML, and CSS, integrating secure authentication and a structured recommendation system.",
+      focus: "Gained expertise in backend development, UI/UX design, database management, and user authentication."
+    },
+    {
+      name: "AlphaShot (Educational Game)",
+      description: "Designed and developed a 2D educational game in Unity, enhancing interactive learning through letter-based gameplay and physics-based mechanics.",
+      focus: "Gained expertise in C# programming, game physics, UI/UX design, and 3D modeling with Blender."
+    },
+    {
+      name: "Lappy (3D Educational Game)",
+      description: "Developed a 3D educational game in Unity, integrating an intuitive shooter mechanism for interactive learning.",
+      focus: "Enhanced skills in C# programming, 3D graphics, UI/UX design, and gameplay mechanics."
+    }
+  ],
+  workExperience: [
+    {
+      title: "Volunteer at NGO",
+      details: [
+        "Assisted in fundraising efforts through online platforms and social media.",
+        "Organized and promoted virtual donation drives to collect monetary and in-kind donations.",
+        "Created awareness campaigns to increase outreach and participation in donation initiatives.",
+        "Collaborated with a team to ensure efficient distribution of collected resources."
+      ]
+    }
+  ],
+  certifications: [
+    { name: "Fundamentals of AI & ML - Vityarthi", link: "https://drive.google.com/file/d/1ALFk5j2BmWPhtuvbbaJDx1ZFeCpbAh3R/view?usp=sharing" },
+    { name: "Python Essentials - Vityarthi", link: "https://drive.google.com/file/d/1chfa0VWPGtNC0R3T7n3G01V132uz1fEi/view?usp=sharing" },
+    { name: "MATLAB Onramp Course", link: "https://drive.google.com/file/d/1OAmW04cuNHuxsUI86u95xz5Zw2FvclTp/view?usp=sharing" },
+    { name: "5-Star JAVA Badge - HackerRank", link: "https://www.hackerrank.com/certificates/iframe/7b7fe22a569f" },
+    // { name: "GSOC Badge for Contributions - Google Summer of Code 2024", link: "https://summerofcode.withgoogle.com/ritika-gsoc" },
+    { name: "AWS Solutions Architecture Job Simulation", link: "https://drive.google.com/file/d/1Rz4ib2w6MsGATRVS-liLnrYr4PYrGoUv/view?usp=sharing" },
+    { name: "Data Analysis with Python", link: "https://drive.google.com/file/d/1Rz4ib2w6MsGATRVS-liLnrYr4PYrGoUv/view?usp=sharing" },
+    { name: "AWS Technical Essentials", link: "https://drive.google.com/file/d/1LbJlKr_Fr20bJPCyQlBy4Ckx3q6z_AKX/view?usp=sharing" },
+    { name: "Official Practice Question Set: AWS Certified ", link: "https://drive.google.com/file/d/1yIWDO0LUO2FLXG8nlq_iJYhpJlw4taLk/view?usp=sharing" },
+    { name: "Full-Stack Engineering with JavaScript", link: " https://codesignal.com/learn/certificates/cmcri5jfe000yjv0466dwxsl6/course-paths/14" }
+  ],
+  activities: [
+    "Google Summer of Code 2025 Contributor",
+    "Participated in various hackathons & coding competitions",
+    "Community Service Volunteer at NGO",
+    "Member of university coding & game development clubs"
+  ]
+};
 
-const EXPERIENCES_DATA: Experience[] = [
-  { company: "Google Summer of Code 2025 Contributor", title: "CONTRIBUTOR", duration: "2025", techStack: ["Python", "Django", "Node.js"] },
-  { company: "Collecteurs", title: "FRONTEND ENGINEER", duration: "MARCH 2022 - AUG 2022", techStack: ["JS", "TS", "React", "MobX"] },
-  { company: "Filiz Security Systems", title: "FULL STACK ENGINEER", duration: "DEC 2019 - FEB 2022", techStack: ["JS", "TS", "React", "Node.js", "Express", "PostgreSQL"] },
-];
+// --- Helper Components ---
 
-const PROJECTS_DATA: Project[] = [
-  { title: "Filiz Security Systems", description: "A security systems company's website built with Next.JS, Prisma ORM and Elastic UI.", category: "IZMIR KAMERA SİSTEMLERİ" },
-  { title: "Enforto GmbH", description: "Enforto GmbH is an e-mobility company that provides engineering services for next generation e-powertrain. It is built by Next.JS with Stitches.JS.", category: "E-MOBILITY" },
-  { title: "Normod Cyprus", description: "Modular, smart and high-quality modern sofa sets.", category: "KIBRIS MOBİLYA VE KOLTUK TAKIMLARI" },
-  { title: "MCE Global", description: "Architecture company website that is designed and built by Webflow and hosted on a WordPress server.", category: "ARCHITECTURE" },
-  { title: "Blogging Platforms", description: "Discover and compare the best blogging platforms.", category: "BLOGGING PLATFORMS" },
-];
-
-// --- 3. REUSABLE COMPONENTS ---
-
-// Component for a skill card (Python, JS, AWS)
-const SkillCard: React.FC<Skill> = ({ icon: Icon, title, description }) => (
-  <div className="flex flex-col space-y-3 p-4">
-    <Icon className="text-teal-400 w-8 h-8" />
-    <h4 className="text-xl font-semibold text-white">{title}</h4>
-    <p className="text-gray-400">{description}</p>
-  </div>
+// Reusable pill/tag component
+const SkillPill: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <span className="bg-purple-900/50 text-purple-300 px-3 py-1 rounded-full text-sm font-medium border border-purple-700 hover:bg-purple-800/60 transition duration-300 cursor-pointer">
+    {children}
+  </span>
 );
 
-// Component for an experience card
-const ExperienceCard: React.FC<Experience> = ({ company, title, duration, techStack }) => (
-  <div className="p-6 bg-gray-800/30 rounded-xl border border-purple-500/20 hover:border-purple-500/50 transition duration-300">
-    <div className="flex justify-between items-start mb-2">
-      <h3 className="text-xl font-semibold text-white">{company}</h3>
-      <span className="text-xs text-gray-400">{duration}</span>
-    </div>
-    <p className="text-sm font-medium text-purple-400 mb-4">{title}</p>
-    {/* Simplified tech stack display for this example */}
-    <div className="flex space-x-2 text-xs text-gray-500">
-      {/* In a real app, you would use icons instead of text */}
-      {techStack.map(tech => <span key={tech} className="bg-gray-700 px-2 py-0.5 rounded">{tech}</span>)}
-    </div>
-  </div>
+// Section Header component
+const SectionHeader: React.FC<{ title: string }> = ({ title }) => (
+  <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 tracking-wider uppercase">
+    {title}
+  </h2>
 );
 
-// Component for a client project card
-const ProjectCard: React.FC<Project> = ({ title, description, category }) => (
-  <div className="p-6 bg-gray-900/40 rounded-xl border border-blue-500/10 hover:border-blue-500/30 transition duration-300 min-h-[160px]">
-    <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-    <p className="text-gray-400 mb-4">{description}</p>
-    <span className="text-xs tracking-widest uppercase text-blue-400">{category}</span>
-  </div>
-);
-
-
-// --- 4. MAIN PORTFOLIO PAGE COMPONENT ---
+// --- Main Portfolio Component ---
 
 const PortfolioPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black text-white font-sans" style={{ backgroundImage: 'radial-gradient(ellipse at center, rgba(147, 51, 234, 0.08) 0%, rgba(0, 0, 0, 0.8) 70%)' }}>
+    // Mimic the dark background and overall structure
+    <div className="min-h-screen bg-gray-900 text-gray-100 font-sans p-4 sm:p-8">
+      
+      
+      
+      {/* 1. Header/Hero Section */}
+      <header className="py-60 text-center relative overflow-hidden">
+        
+        
+        {/* Abstract background grid effect */}
+        <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
+          {/* Simple grid pattern */}
+          <div className="w-full h-full bg-grid-white/[0.05] [mask-image:linear-gradient(to_bottom,white_30%,transparent_100%)]" />
+          
+        </div>
+        
+        
+        
+       <div className="relative z-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-50">
+        
+        {/* Profile Image Container */}
+        <div className="w-40 h-40 md:w-70 md:h-70 rounded-full overflow-hidden border-4 border-cyan-400 p-1 shadow-2xl shadow-cyan-500/50 flex-shrink-0">
+            {/*  */}
+            <img 
+                src="https://drive.google.com/file/d/1ocKuSghr9CPZredwl1eOSdDIc2d0SFsE/view?usp=sharing" // *** IMPORTANT: CHANGE THIS PATH ***
+                alt="Ritika Kushwaha Profile Picture" 
+                className="w-full h-full object-cover rounded-full"
+            />
+        </div>
 
-      {/* Navigation */}
-      <header className="py-6 px-8 flex justify-end">
-        <nav className="space-x-8 text-lg font-medium">
-          <a href="#home" className="hover:text-purple-400 transition">Home</a>
-          <a href="#blog" className="hover:text-purple-400 transition">Blog</a>
-        </nav>
+        {/* Text Content */}
+        <div className='text-center md:text-left'> 
+          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-2">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400">
+              Hey, I am {resumeData.name}
+            </span>
+          </h1>
+          <p className="text-xl sm:text-2xl font-light mb-4 text-cyan-300">
+            {resumeData.heroTagline}
+          </p>
+          <p className="text-md text-gray-400 italic mb-6">
+            {resumeData.title}
+          </p>
+          {/* Example CTA button */}
+          <button className="mx-auto md:mx-0">
+            <a 
+            href="/app/project.tsx" // CHANGE: Added href to link to the projects section
+            className="px-6 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-gray-900 transition duration-300 shadow-xl shadow-cyan-500/30"
+          >
+            View My Projects
+          </a>
+          </button>
+        </div>
+    </div>
+        
       </header>
 
-      <main className="container mx-auto px-8 py-16">
+      <main className="max-w-7xl mx-auto space-y-24 pt-10">
 
-        {/* 1. Hero Section */}
-        <section id="home" className="mb-32">
-          <p className="text-sm tracking-widest uppercase text-gray-400 mb-4">FULLSTACK WEB DEVELOPER</p>
-          <h1 className="text-6xl md:text-8xl font-light mb-4 leading-tight">
-            Hi, I'm Can. 👋
-          </h1>
-          <h2 className="text-6xl md:text-8xl font-serif italic mb-8 leading-tight text-purple-300">
-            I enjoy programming.
-          </h2>
-          <p className="max-w-xl text-xl text-gray-300">
-            A highly motivated and skilled Computer Science student specializing in Educational Technology with experience in game development, web development, and 3D modeling. Passionate about creating engaging user experiences and interactive learning tools.         
-          </p>
+        {/* 2. About Me Section */}
+        <section id="about">
+          <SectionHeader title="About Me" />
+          <div className="bg-gray-800/70 p-8 rounded-xl shadow-2xl shadow-purple-900/50 border border-purple-700/50 max-w-3xl mx-auto">
+            <p className="text-lg leading-relaxed text-gray-300">
+              {resumeData.about}
+            </p>
+          </div>
         </section>
 
-        {/* 2. Skills/Expertise Section */}
-        <section id="skills" className="mb-32">
-          <h2 className="text-4xl md:text-6xl font-light mb-4">
-            I solve problems
-          </h2>
-          <h3 className="text-4xl md:text-6xl font-serif italic mb-12 text-teal-400">
-            with Python, Java, Unity, Blender, and web technologies
-          </h3>
-          <p className="max-w-3xl text-lg text-gray-300 mb-16">
-            With strong problem-solving skills and a keen interest in AI and data analytics, I excel at confidently solving problems using Django, React, game development, web development, and 3D modeling.
-          </p>
+        {/* 3. Skills and Certifications (Side-by-Side in the resume, adapting to a split layout) */}
+        <section id="skills-certs" className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          
+          {/* Skills */}
+          <div className="p-6 bg-gray-800/70 rounded-xl shadow-xl border border-cyan-700/50">
+            <h3 className="text-2xl font-semibold mb-6 text-cyan-400 border-b border-cyan-700 pb-2">Tools and Skills</h3>
+            <div className="space-y-6">
+              
+              <div className=''>
+                <h4 className="text-xl font-medium mb-3 text-purple-400">Programming & Web</h4>
+                <div className="flex flex-wrap gap-2">
+                  {resumeData.skills.programming.map(skill => <SkillPill key={skill}>{skill}</SkillPill>)}
+                </div>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {SKILLS_DATA.map((skill, index) => (
-              <SkillCard key={index} {...skill} />
+              <div>
+                <h4 className="text-xl font-medium mb-3 text-purple-400">Game Development</h4>
+                <div className="flex flex-wrap gap-2">
+                  {resumeData.skills.gameDev.map(skill => <SkillPill key={skill}>{skill}</SkillPill>)}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-xl font-medium mb-3 text-purple-400">Data & 3D Modeling</h4>
+                <div className="flex flex-wrap gap-2">
+                  {resumeData.skills.data.map(skill => <SkillPill key={skill}>{skill}</SkillPill>)}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Certifications and Activities */}
+          <div className="p-6 bg-gray-800/70 rounded-xl shadow-xl border border-cyan-700/50">
+            <h3 className="text-2xl font-semibold mb-6 text-cyan-400 border-b border-cyan-700 pb-2">Certifications & Activities</h3>
+            <div className="space-y-6">
+              
+              <div>
+                <h4 className="text-xl font-medium mb-3 text-purple-400">Certifications</h4>
+                <ul className="list-disc list-inside space-y-2 ml-4 text-gray-300">
+                  {/* MODIFIED RENDERING LOGIC */}
+                  {resumeData.certifications.map((cert, index) => (
+                    <li key={index} className="transition duration-300">
+                      <a 
+                        href={cert.link} // Use the link from the data object
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-gray-300 hover:text-cyan-300 hover:underline" // Added hover styles for link
+                      >
+                        {cert.name}
+                      </a>
+                    </li>
+                  ))}
+                  {/* END MODIFIED LOGIC */}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-xl font-medium mb-3 text-purple-400">Activities</h4>
+                <ul className="list-disc list-inside space-y-2 ml-4 text-gray-300">
+                  {resumeData.activities.map((activity, index) => (
+                    <li key={index} className="hover:text-cyan-300 transition duration-300">{activity}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* 4. Education Section */}
+        <section id="education">
+          <SectionHeader title="Academic Journey" />
+          <div className="space-y-8 max-w-5xl mx-auto">
+            {resumeData.education.map((edu, index) => (
+              <div key={index} className="relative bg-gray-800/80 p-6 rounded-lg shadow-lg border-l-4 border-purple-500 hover:shadow-purple-500/30 transition duration-300">
+                <p className="absolute -top-3 right-4 text-sm font-mono text-purple-400 bg-gray-900 px-2 py-0.5 rounded-full">{edu.years}</p>
+                <h3 className="text-xl font-semibold text-cyan-300">{edu.degree}</h3>
+                <p className="text-lg text-gray-300 italic mb-2">{edu.institution}</p>
+                <p className="text-sm text-gray-400">{edu.details}</p>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* 3. Professional Experiences Section */}
-        <section id="experience" className="mb-32">
-          <h2 className="text-2xl tracking-widest uppercase text-gray-400 mb-10">
-            PROFESSIONAL EXPERIENCES
-          </h2>
+        {/* 5. Projects Section */}
+        <section id="projects">
+          <SectionHeader title="My Key Projects" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {EXPERIENCES_DATA.map((exp, index) => (
-              <ExperienceCard key={index} {...exp} />
+            {resumeData.projects.map((project, index) => (
+              <div key={index} className="bg-gray-800/70 p-6 rounded-xl shadow-2xl hover:shadow-cyan-500/40 transition duration-500 border border-gray-700/50">
+                <h3 className="text-xl font-bold mb-3 text-purple-400">{project.name}</h3>
+                <p className="text-sm text-gray-300 mb-4">{project.description}</p>
+                <p className="text-xs italic text-cyan-300 border-t border-gray-700 pt-3">
+                  <span className="font-semibold">Key Focus:</span> {project.focus}
+                </p>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* 4. Client Projects Section */}
-        <section id="projects" className="mb-32">
-          <h2 className="text-2xl tracking-widest uppercase text-gray-400 mb-10">
-            CLIENT PROJECTS
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {PROJECTS_DATA.map((project, index) => (
-              <ProjectCard key={index} {...project} />
+        {/* 6. Work Experience Section (Volunteer/Internship) */}
+        <section id="experience">
+          <SectionHeader title="Work & Volunteer Experience" />
+          <div className="max-w-4xl mx-auto space-y-6">
+            {resumeData.workExperience.map((work, index) => (
+                <div key={index} className="bg-gray-800/70 p-6 rounded-xl shadow-xl border-2 border-purple-900">
+                    <h3 className="text-2xl font-semibold text-cyan-400 mb-2">{work.title}</h3>
+                    <ul className="list-disc list-outside space-y-2 ml-6 text-gray-300">
+                        {work.details.map((detail, i) => (
+                            <li key={i} className="text-base">{detail}</li>
+                        ))}
+                    </ul>
+                </div>
             ))}
           </div>
         </section>
+
       </main>
 
-      {/* 5. Footer */}
-      <footer className="py-8 px-8 border-t border-gray-800">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500">
-          <div className="flex items-center space-x-2 text-lg">
-            {/* Placeholder for the gradient logo/icon */}
-            <div className="w-6 h-6 rounded-full" style={{ background: 'linear-gradient(45deg, #FF69B4, #8A2BE2)' }}></div>
-            <p>Crafted by Can Burak Sodyakoglu with ❤️</p>
-          </div>
-
-          <div className="flex space-x-6 text-2xl mt-4 md:mt-0">
-            <a href="#" aria-label="Facebook" className="hover:text-white transition"><FaFacebookF /></a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-white transition"><FaLinkedin /></a>
-            <a href="#" aria-label="GitHub" className="hover:text-white transition"><FaGithub /></a>
-            <a href="#" aria-label="Twitter" className="hover:text-white transition"><FaTwitter /></a>
-            <a href="#" aria-label="RSS Feed" className="hover:text-white transition"><FaRss /></a>
-          </div>
-
-          <div className="flex space-x-6 text-sm mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition">Contact</a>
-            <a href="#" className="hover:text-white transition">Blog</a>
-          </div>
+      {/* 7. Footer */}
+      <footer className="mt-20 py-8 text-center border-t border-gray-700/50">
+        <p className="text-sm text-gray-500">
+          Designed and Coded by Ritika Kushwaha | Built with React & Tailwind CSS
+        </p>
+        <div className="mt-4 flex justify-center space-x-6 text-xl">
+            {/* Replace # with actual links */}
+            <a href="https://github.com/Ritika-kushwaha" className="text-cyan-400 hover:text-white transition duration-300">GitHub</a>
+            <span className="text-gray-600">|</span>
+            <a href="https://www.linkedin.com/in/ritikakushwaha/" className="text-cyan-400 hover:text-white transition duration-300">LinkedIn</a>
+            <span className="text-gray-600">|</span>
+            <a href={`mailto:ritikakushwaha62@gmail.com`} className="text-cyan-400 hover:text-white transition duration-300">Email</a>
         </div>
       </footer>
+
     </div>
   );
 };
 
 export default PortfolioPage;
+
+// Note: To make the grid effect work, you would need to define a custom utility class 
+// or use a utility from a library like tailwind-shades/pattern-fills. 
+// For this example, assume the following CSS is available or use a library:
+// .bg-grid-white\/\[0\.05\] {
+//   background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%);
+//   background-size: 100px 100px;
+// }
