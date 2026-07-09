@@ -24,15 +24,15 @@ const Portfolio = () => {
   // Inline Certifications Component as you had it
   const Certifications = () => {
     const certs = [
+      {title: "AWS Solutions Architect", issuer: "Amazon Web Services", date: "2026", type: "Certificate", img:"/images/AWSSA.png"},
       { title: "GSoC 2025 Badge", issuer: "Google Summer of Code", date: "2025", type: "Badge" , img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg9U6Bmi1rYLZjOMmaDjeQsjawxdtIo44Fvg&s"},
       { title: "Fundamentals of AI & ML", issuer: "Vityarthi", date: "2024", type: "Certificate", img: "/images/AI ML Certificate.png" },
       { title: "5-Star JAVA Basics", issuer: "HackerRank", date: "2024", type: "Skill Badge", img: "/images/java.png" },
-      { title: "AWS Solutions Architecture", issuer: "Job Simulation", date: "2024", type: "Simulation" , img: "/images/AWSJ.png"},
-      {title:"AWS Cloud Practitioner", issuer:"Amazon Web Services", date:"2024", type:"Certificate", img:"/images/AWSC.png"},
       { title: "Python Essentials", issuer: "Vityarthi", date: "2024", type: "Certificate", img: "/images/python.png" },
       {title: "AWS Technical Essentials", issuer: "Amazon Web Services", date: "2024", type: "Certificate", img:"/images/AWST.png"},
       {title:"Data Analysis with Python", issuer:"IBM", date:"2025", type:"Certificate", img:"/images/DA.png"},
       {title: "JavaScript Essentials", issuer: "CodeSignal", date: "2025", type: "Certificate", img: "/images/JS.png" },
+      {title: "Full-Stack Engineering with JavaScript", issuer: "CodeSignal", date: "2025", type: "Certificate", img: "/images/FullStack.png" },
       {title:"Applied Machine Learning in Python", issuer:"Coursera", date:"2025", type:"Certificate", img:"/images/ML.png"},
     ];
     return (
@@ -67,8 +67,8 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0f1115] text-white selection:bg-orange-500 selection:text-white overflow-x-hidden">
-      
+    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 px-4 md:px-12 min-h-screen bg-[#0f1115] text-white selection:bg-orange-500 selection:text-white overflow-x-hidden">
+      {/* <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 px-4 md:px-12"></div> */}
       <Navbar />
 
       {/* HERO SECTION */}
@@ -83,11 +83,11 @@ const Portfolio = () => {
           </motion.h1>
           <motion.div variants={fadeInUp} className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-12">
             <div className="max-w-md text-gray-400 leading-relaxed italic text-lg">
-              "Highly motivated and skilled Computer Science student specializing in Educational Technology with experience in game development, web development, and 3D modeling."
+              "Full-Stack Developer specialized in web development, 3D modeling, and AI. Proficient in MERN, Python, Java, Unity, and Blender. Passionate about building interactive, data-driven educational solutions."
             </div>
             <div className="flex gap-4">
                <div className="bg-gray-800/50 p-6 rounded-3xl border border-gray-700 backdrop-blur-sm text-center">
-                  <div className="text-3xl font-bold italic">8.46</div>
+                  <div className="text-3xl font-bold italic">8.62</div>
                   <div className="text-[10px] uppercase tracking-widest text-gray-500 mt-1">GPA </div>
                </div>
                <div className="bg-gray-800/50 p-6 rounded-3xl border border-gray-700 backdrop-blur-sm text-center">

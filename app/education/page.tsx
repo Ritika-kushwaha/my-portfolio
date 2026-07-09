@@ -14,6 +14,14 @@ const ProfessionalTimeline = () => {
       color: "border-green-500/50"
     },
     {
+      year: "2021",
+      title: "Community Service Volunteer",
+      organization: "NGO",
+      description: "Assisted in fundraising and awareness campaigns, managing digital outreach and resource distribution.",
+      icon: <Briefcase className="text-red-400" />,
+      color: "border-red-500/50"
+    },
+    {
       year: "2022",
       title: "12th Grade Completion",
       organization: "Lucknow Public School",  
@@ -46,12 +54,12 @@ const ProfessionalTimeline = () => {
       color: "border-blue-500/50"
     },
     {
-      year: "2021",
-      title: "Community Service Volunteer",
-      organization: "NGO",
-      description: "Assisted in fundraising and awareness campaigns, managing digital outreach and resource distribution.",
-      icon: <Briefcase className="text-red-400" />,
-      color: "border-red-500/50"
+      year: "2026 (Ongoing)",
+      title: "Infosys Springboard Internship 7.0",
+      organization: "Infosys",
+      description: "Ongoing Internship in developing an AI-powered Sales Intelligence Platform named SalesGenie AI",
+      icon: <Award className="text-yellow-400" />,
+      color: "border-yellow-500/50"
     }
   ];
 

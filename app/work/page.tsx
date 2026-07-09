@@ -17,14 +17,7 @@ export default function WorksGallery() {
       icon: <Layers size={40} className="text-orange-500" />,
       img: '/images/nxtstep.png' // Replace with your screenshot
     },
-    {
-      title: "AlphaShot",
-      category: "Game Design",
-      desc: "3D educational game in Unity with letter-based gameplay and physics-based mechanics.",
-      tech: ["Unity", "C#", "Blender"],
-      icon: <Gamepad size={40} className="text-blue-500" />,
-      img: '/images/alphashot.png' // Replace with your screenshot
-    },
+    
     {
       title:"Tryo",
       category: "Web Development",
@@ -37,9 +30,17 @@ export default function WorksGallery() {
       title: "MarkDarshan",
       category: "Web Development",
       desc: "A community platform offering resources and tools for peoples to know there vehicle capabilities.",
-      tech: ["React", "Node.js", "Firebase"],
+      tech: ["React", "Node.js", "Firebase, "],
       icon: <Layers size={40} className="text-purple-500" />,
       img: '/images/markdarshan.png' // Replace with your screenshot
+    },
+    {
+      title: "SalesGenie AI",
+      category: "AI & Web Development",
+      desc: "An AI-powered Sales Intelligence Platform that provides actionable insights for sales teams.",
+      tech: ["Python", "React", "FastAPI", "PostgreSQL", "OpenAI API", "Git", "GitHub"],
+      icon: <Zap size={40} className="text-yellow-500" />,
+      img: '/images/salesgenie.png'
     }
   ];
 
