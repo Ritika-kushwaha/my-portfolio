@@ -67,32 +67,32 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 px-4 md:px-12 min-h-screen bg-[#0f1115] text-white selection:bg-orange-500 selection:text-white overflow-x-hidden">
+    <div className="max-w-7xl mx-auto gap-4 px-4 md:px-12 min-h-screen bg-[#0f1115] text-white selection:bg-orange-500 selection:text-white overflow-x-hidden">
       {/* <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 px-4 md:px-12"></div> */}
-      <Navbar />
+      
 
       {/* HERO SECTION */}
       <section id="home" className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 pt-20">
         <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-7xl mx-auto w-full">
           <motion.p variants={fadeInUp} className="text-orange-500 font-bold mb-4 flex items-center gap-2">
-            <span className="w-8 h-[1px] bg-orange-500"></span> B.Tech Student 
+            <span className="w-8 h-[1px] bg-orange-500"></span> Full-Stack Developer 
           </motion.p>
           <motion.h1 variants={fadeInUp} className="text-7xl md:text-[10rem] font-black tracking-tighter leading-[0.85] mb-8">
-            Engineering<br />
-            <span className="text-transparent stroke-text italic">STUDENT</span>
+            Software<br />
+            <span className="text-transparent stroke-text italic">Developer</span>
           </motion.h1>
           <motion.div variants={fadeInUp} className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-12">
             <div className="max-w-md text-gray-400 leading-relaxed italic text-lg">
-              "Full-Stack Developer specialized in web development, 3D modeling, and AI. Proficient in MERN, Python, Java, Unity, and Blender. Passionate about building interactive, data-driven educational solutions."
+              "Full-Stack Developer specializing in modern web applications, AI-powered solutions, and interactive user experiences. Skilled in MERN, Next.js, Python, Java, Firebase, FastAPI, and Blender with a passion for building scalable products that solve real-world problems."
             </div>
             <div className="flex gap-4">
                <div className="bg-gray-800/50 p-6 rounded-3xl border border-gray-700 backdrop-blur-sm text-center">
                   <div className="text-3xl font-bold italic">8.62</div>
-                  <div className="text-[10px] uppercase tracking-widest text-gray-500 mt-1">GPA </div>
+                  <div className="text-[10px] uppercase tracking-widest text-gray-500 mt-1">CGPA </div>
                </div>
                <div className="bg-gray-800/50 p-6 rounded-3xl border border-gray-700 backdrop-blur-sm text-center">
-                  <div className="text-3xl font-bold italic">GSoC</div>
-                  <div className="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Contributor 2025 </div>
+                  <div className="text-3xl font-bold italic">6+</div>
+                  <div className="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Projects </div>
                </div>
             </div>
           </motion.div>
@@ -111,8 +111,9 @@ const Portfolio = () => {
       <Certifications />
 
       <section id="contact">
-        <Footer />
+        <ContactSection />
       </section>
+      <Footer />
 
       <style>{`
         .stroke-text { -webkit-text-stroke: 1px white; }

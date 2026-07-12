@@ -9,7 +9,7 @@ const ProfessionalTimeline = () => {
       year: "2020",
       title: "10th Grade Completion",
       organization: "Lucknow Public School", 
-      description: "Completed 10th grade with a focus on foundational subjects, achieving a strong academic record.and got 92.4% marks.",
+      description: "Completed Class X with 92.4%, building a strong foundation in Mathematics, Science, and Computer fundamentals.",
       icon: <Calendar className="text-green-400" />,
       color: "border-green-500/50"
     },
@@ -25,7 +25,7 @@ const ProfessionalTimeline = () => {
       year: "2022",
       title: "12th Grade Completion",
       organization: "Lucknow Public School",  
-      description: "Completed 12th grade specializing in Science stream with Physics, Chemistry, and Mathematics, securing 80% marks.",
+      description: "Completed Class XII (PCM) with 80%, strengthening analytical thinking and problem-solving skills.",
       icon: <Calendar className="text-indigo-400" />,
       color: "border-indigo-500/50"
     },
@@ -33,7 +33,7 @@ const ProfessionalTimeline = () => {
       year: "2023",
       title: "B.Tech in Computer Science & Engineering in Educational Technology (Ongoing)",
       organization: "VIT Bhopal",
-      description: "Pursuing a Bachelor of Technology degree with a specialization in Computer Science and Engineering, focusing on software development and educational technology.",
+      description: "Currently pursuing B.Tech in Information Technology with a CGPA of 8.62. Focused on Full-Stack Development, Artificial Intelligence, Cloud Computing, and Software Engineering.",
       icon: <Briefcase className="text-red-400" />,
       color: "border-red-500/50"
     },
@@ -57,7 +57,7 @@ const ProfessionalTimeline = () => {
       year: "2026 (Ongoing)",
       title: "Infosys Springboard Internship 7.0",
       organization: "Infosys",
-      description: "Ongoing Internship in developing an AI-powered Sales Intelligence Platform named SalesGenie AI",
+      description: "Developing SalesGenie AI, an AI-powered Sales Intelligence Platform using FastAPI, React, PostgreSQL, and OpenAI APIs to deliver actionable business insights.",
       icon: <Award className="text-yellow-400" />,
       color: "border-yellow-500/50"
     }

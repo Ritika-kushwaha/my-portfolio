@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Layers, Code2, Gamepad } from 'lucide-react';
+import { ExternalLink, Github, Layers, Code2, Gamepad, Zap } from 'lucide-react';
 import nxtstepImg from '../images/nxtstep.png';
 import alphashotImg from '../images/alphashot.png';
 import tryoImg from '../images/tryo.png';
@@ -11,36 +11,44 @@ export default function WorksGallery() {
   const projects = [
     {
       title: "NxtStep",
-      category: "Web Development",
-      desc: "A career counseling platform using Django, Python, HTML, and CSS with secure authentication.",
-      tech: ["Django", "Python", "PostgreSQL"],
+      category: "Career Guidance Platform",
+      desc: "Built an AI-powered career counseling platform that recommends personalized career paths, learning resources, and skill roadmaps based on student interests and academic background.",
+      tech: ["Tailwind", "Python", "Next.js","Gemini AI"],
       icon: <Layers size={40} className="text-orange-500" />,
-      img: '/images/nxtstep.png' // Replace with your screenshot
+      img: '/images/nxtstep.png', // Replace with your screenshot
+      github: "https://github.com/Ritika-kushwaha/NxtStep",
+    live: "https://nxtstep31.vercel.app",
     },
     
     {
       title:"Tryo",
-      category: "Web Development",
-      desc:"A e commerce web application built with React, Node.js, and Firebase featuring e-commerce functionality.",
-      tech:["React", "Node.js", "Firebase"],
+      category: "E Commerce Platform",
+      desc:"Designed and developed a modern e-commerce application with secure authentication, Firebase backend, product management, and responsive user experience.",
+      tech:["React", "Node.js", "Firebase","Tailwind"],
       icon:<Code2 size={40} className="text-green-500" />,
       img: '/images/tryo.png', // Replace with your screenshot
+      github: "https://github.com/Ritika-kushwaha/tryo-skincare",
+    live: "https://tryo-organic-beauty.vercel.app",
     },
     {
       title: "MarkDarshan",
-      category: "Web Development",
-      desc: "A community platform offering resources and tools for peoples to know there vehicle capabilities.",
-      tech: ["React", "Node.js", "Firebase, "],
+      category: "Travel & Navigation Platform",
+      desc: "Created a travel assistance platform featuring optimized routes, weather forecasting, expense tracking, emergency SOS, and owner dashboards for smarter trip planning.",
+      tech: ["Next.js", "Typescript", "Firebase "],
       icon: <Layers size={40} className="text-purple-500" />,
-      img: '/images/markdarshan.png' // Replace with your screenshot
+      img: '/images/markdarshan.png', // Replace with your screenshot
+      github: "https://github.com/Akshaj-mishra/MARGDARSHAN",
+    live: "https://markdarshan-frontend.vercel.app",
     },
     {
       title: "SalesGenie AI",
-      category: "AI & Web Development",
-      desc: "An AI-powered Sales Intelligence Platform that provides actionable insights for sales teams.",
+      category: "AI • Full Stack Development",
+      desc: "Developing an AI-powered Sales Intelligence Platform that analyzes companies, generates business insights, and helps sales teams identify potential opportunities using LLMs.",
       tech: ["Python", "React", "FastAPI", "PostgreSQL", "OpenAI API", "Git", "GitHub"],
       icon: <Zap size={40} className="text-yellow-500" />,
-      img: '/images/salesgenie.png'
+      img: '/images/salesgenie.png',
+      github: "https://github.com/Ritika-kushwaha/Salesgenie_ai",
+    live: "", // Leave empty if private
     }
   ];
 
@@ -61,8 +69,29 @@ export default function WorksGallery() {
                 <img src={project.img} alt={project.title} className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-12">
                    <div className="flex gap-4">
-                      <button className="bg-white text-black p-4 rounded-full hover:bg-orange-500 hover:text-white transition-colors"><ExternalLink size={20}/></button>
-                      <button className="bg-white text-black p-4 rounded-full hover:bg-orange-500 hover:text-white transition-colors"><Github size={20}/></button>
+                      <div className="flex gap-4">
+  {project.live && (
+    <a
+      href={project.live}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-white text-black p-4 rounded-full hover:bg-orange-500 hover:text-white transition-colors"
+    >
+      <ExternalLink size={20} />
+    </a>
+  )}
+
+  {project.github && (
+    <a
+      href={project.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-white text-black p-4 rounded-full hover:bg-orange-500 hover:text-white transition-colors"
+    >
+      <Github size={20} />
+    </a>
+  )}
+</div>
                    </div>
                 </div>
               </div>

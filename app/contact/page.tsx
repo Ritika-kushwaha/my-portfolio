@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, Instagram, Linkedin, Globe, MessageSquare, ArrowUpRight, Github } from 'lucide-react';
+import { Mail, Phone, Linkedin, MessageSquare, ArrowUpRight, Github } from 'lucide-react';
 
 const ContactSection = () => {
   return (
@@ -31,22 +31,8 @@ const ContactSection = () => {
           </motion.h2>
 
           {/* Action Buttons */}
-          <div className="flex flex-col md:flex-row justify-center gap-6">
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              href="mailto:ritikakushwaha62@gmail.com"
-              className="flex items-center justify-center gap-3 border border-gray-700 rounded-full px-12 py-5 text-lg font-medium hover:bg-white hover:text-black transition-all"
-            >
-              <MessageSquare size={20} /> Message
-            </motion.a>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center justify-center gap-3 border border-gray-700 rounded-full px-12 py-5 text-lg font-medium hover:bg-white hover:text-black transition-all"
-            >
-              Discuss project
-            </motion.button>
-          </div>
-        </div>
+          
+        
 
         {/* --- QUICK CONTACT INFO --- */}
         <div className="flex flex-col md:flex-row justify-center items-center gap-12 mb-24 py-12 border-y border-gray-900">
@@ -66,14 +52,14 @@ const ContactSection = () => {
             <span className="text-xl">+91 9569317220</span>
           </div>
         </div>
-
+        </div>
         {/* --- SOCIAL GRID --- */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {[
-            { label: 'LinkedIn', username: '@ritikakushwaha', icon: <Linkedin size={18} />, url: 'https://linkedin.com/in/ritikakushwaha' },
+            { label: 'LinkedIn', username: '@Ritika-Kushwaha', icon: <Linkedin size={18} />, url: 'https://linkedin.com/in/Ritika-Kushwaha' },
             { label: 'GitHub', username: '@Ritika-Kushwaha', icon: <Github size={18} />, url: 'https://github.com/Ritika-Kushwaha' },
-            { label: 'Instagram', username: '@ritika.dev', icon: <Instagram size={18} />, url: '#' },
-            { label: 'Portfolio', username: 'v1.ritika.io', icon: <Globe size={18} />, url: '#' }
+            //{ label: 'Instagram', username: '@ritika.dev', icon: <Instagram size={18} />, url: '#' },
+            //{ label: 'Portfolio', username: 'v1.ritika.io', icon: <Globe size={18} />, url: '#' }
           ].map((social) => (
             <a 
               key={social.label}
