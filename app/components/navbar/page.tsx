@@ -41,7 +41,7 @@ export default function Navbar() {
         whileTap={{ scale: 0.95 }}
         className="border border-gray-700 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all"
       >
-        <a href="\images\Infosys_Resume (1).pdf" download="Ritika_Kushwaha_Resume.pdf">DOWNLOAD RESUME</a>
+        <a href="C:\doc\Portfolio\my-portfolio\public\images\RitikaKushwaha_CDC.pdf" download="Ritika_Kushwaha_Resume.pdf">DOWNLOAD RESUME</a>
       </motion.button>
     </nav>
   );

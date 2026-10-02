@@ -10,6 +10,16 @@ import markdarshanImg from '../images/markdarshan.png';
 export default function WorksGallery() {
   const projects = [
     {
+      title: "PrimeCare",
+      category: "Healthcare Platform",
+      desc: "**PrimeCare** — AI-powered healthcare platform for appointment management, patient follow-ups, symptom triage, and automated healthcare workflows.",
+      tech: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "Google Gemini API", "Nodemailer", "Google Calendar API"],
+      icon: <Gamepad size={40} className="text-blue-500" />,
+      img: '/images/PrimeCare.png', // Replace with your screenshot
+      github: "https://github.com/Ritika-kushwaha/PrimeCare",
+    live: "https://primecare-app-jet.vercel.app/",
+    },
+    {
       title: "NxtStep",
       category: "Career Guidance Platform",
       desc: "Built an AI-powered career counseling platform that recommends personalized career paths, learning resources, and skill roadmaps based on student interests and academic background.",

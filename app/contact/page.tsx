@@ -56,7 +56,7 @@ const ContactSection = () => {
         {/* --- SOCIAL GRID --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {[
-            { label: 'LinkedIn', username: '@Ritika-Kushwaha', icon: <Linkedin size={18} />, url: 'https://linkedin.com/in/Ritika-Kushwaha' },
+            { label: 'LinkedIn', username: '@Ritika-Kushwaha', icon: <Linkedin size={18} />, url: 'https://linkedin.com/in/ritikakushwaha' },
             { label: 'GitHub', username: '@Ritika-Kushwaha', icon: <Github size={18} />, url: 'https://github.com/Ritika-Kushwaha' },
             //{ label: 'Instagram', username: '@ritika.dev', icon: <Instagram size={18} />, url: '#' },
             //{ label: 'Portfolio', username: 'v1.ritika.io', icon: <Globe size={18} />, url: '#' }

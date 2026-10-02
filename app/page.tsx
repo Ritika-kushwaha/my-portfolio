@@ -87,7 +87,7 @@ const Portfolio = () => {
             </div>
             <div className="flex gap-4">
                <div className="bg-gray-800/50 p-6 rounded-3xl border border-gray-700 backdrop-blur-sm text-center">
-                  <div className="text-3xl font-bold italic">8.62</div>
+                  <div className="text-3xl font-bold italic">8.65</div>
                   <div className="text-[10px] uppercase tracking-widest text-gray-500 mt-1">CGPA </div>
                </div>
                <div className="bg-gray-800/50 p-6 rounded-3xl border border-gray-700 backdrop-blur-sm text-center">
